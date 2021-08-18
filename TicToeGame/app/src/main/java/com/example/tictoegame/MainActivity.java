@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                resetGame();
             }
         });
     }
@@ -89,6 +89,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void draw(){
         Toast.makeText(this, "Nobody wins! Draw!", Toast.LENGTH_SHORT).show();
+        resetBoard();
+    }
+
+    private void resetGame(){
+        player1Points = 0;
+        player2Points = 0;
+        updatePointsText();
         resetBoard();
     }
 
@@ -143,5 +150,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return true;
         }
         return false;
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("roundCount", roundCount);
+        outState.putInt("player1Points", player1Points);
+        outState.putInt("player2Points", player2Points);
+        outState.putBoolean("player1Turn", player1Turn);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstance){
+        super.onRestoreInstanceState(savedInstance);
+
+        roundCount = savedInstance.getInt("roundCount");
+        player1Points = savedInstance.getInt("player1Points");
+        player2Points = savedInstance.getInt("player2Points");
+        player1Turn = savedInstance.getBoolean("player1Turn");
     }
 }
