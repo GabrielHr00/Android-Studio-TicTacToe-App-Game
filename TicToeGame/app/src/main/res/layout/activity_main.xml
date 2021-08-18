@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="@color/cardview_dark_background">
+    tools:context=".MainActivity">
 
     <RelativeLayout
-        android:layout_width="390dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:background="@color/cardview_dark_background"
-        tools:background="@drawable/custom_border"
-        tools:layout_marginRight="10dp">
+        android:background="@drawable/border_relativelo"
+        android:gravity="center_vertical">
 
         <TextView
             android:id="@+id/player1_points"
@@ -24,8 +23,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:text="Player 1: 0"
-            android:textColor="@color/white"
+            android:text="1. Player: 0"
+            android:textColor="#F2E7D5"
             android:textSize="30sp" />
 
 
@@ -34,25 +33,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/player1_points"
+            android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Player 2: 0"
-            android:textColor="@color/white"
+            android:text="2. Player: 0"
+            android:textColor="#F2E7D5"
             android:textSize="30sp" />
 
         <Button
             android:id="@+id/reset_button"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="40dp"
-            android:background="@color/white"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/custom_border"
             android:backgroundTint="@color/cardview_light_background"
             android:text="Reset"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="12sp"
+            app:backgroundTint="#FDC298" />
 
     </RelativeLayout>
 
@@ -62,7 +63,7 @@
         android:layout_marginTop="70dp"
         android:layout_weight="1"
         android:background="@color/cardview_dark_background"
-        tools:layout_marginLeft="10dp">
+        tools:layout_marginLeft="0dp">
 
         <Button
             android:id="@+id/button_00"
@@ -98,7 +99,6 @@
     <LinearLayout
         android:layout_width="390dp"
         android:layout_height="0dp"
-        android:layout_marginLeft="10dp"
         android:layout_weight="1"
         android:background="@color/cardview_dark_background">
 
@@ -130,14 +130,11 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:textSize="60sp" />
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="390dp"
-        android:layout_height="87dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_height="19dp"
         android:layout_weight="1"
         android:background="@color/cardview_dark_background">
 
